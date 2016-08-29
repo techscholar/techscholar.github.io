@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="robots" content="noindex">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../styles/demo-ptm.css">
+  </head>
+  <body>
+    <audio src="/audio/techscholar-demo-ptm-p8.mp3" controls autoplay preload></audio>
+    <div class="wrapper">
+      <section class="ptm-sidebar">
+        <div class="logo">
+          <img src="/images/techscholar/techscholar-logo.png" alt="sidebar image">
+        </div>
+        <img src="/images/techscholar/sidebar-05.png" alt="sidebar image">
+      </section>
+      <section class="ptm-body">
+        <div class="mobile-logo">
+          <img src="/images/techscholar/techscholar-logo.png" alt="sidebar image">
+        </div>
+        <nav class="ptm-meta">
+          <select name="ptm-nav-select" onchange="javascript:techScholarDemo.goToUrl(this.value)">
+            <option value="/demo-ptm-p1">Page 1</option>
+            <option value="/demo-ptm-p2">Page 2</option>
+            <option value="/demo-ptm-p3">Page 3</option>
+            <option value="/demo-ptm-p4">Page 4</option>
+            <option value="/demo-ptm-p5">Page 5</option>
+            <option value="/demo-ptm-p6">Page 6</option>
+            <option value="/demo-ptm-p7">Page 7</option>
+            <option value="/demo-ptm-p8" selected>Page 8</option>
+            <option value="/demo-ptm-p9">Page 9</option>
+            <option value="/demo-ptm-p10">Quiz</option>
+          </select>
+          <div class="back-next">
+            <a href="/demo-ptm-p7" class="back">< Back</a>
+            <a href="/demo-ptm-p9" class="next">Next ></a>
+          </div>
+        </nav>
+        <article class="ptm-content">
+          <header>
+            <h5 class="ptm-title">DEMO PTM TITLE</h5>
+            <h1 class="slide-title">Our Commitment to Clients</h1>
+            <h2 class="slide-subhead">We’re proud to say that many of our founding clients are current clients.</h2>
+          </header>
+          <p>Our commitment to clients is to help them grow their business. Client service is the foundation of that commitment, and these are the tools we’ve created to deliver superior customer service.</p>
+          <img src="/images/techscholar/ts-demo-08-01.png" class="right max-320" alt="">
+          <ul>
+            <li>Branded Campus</li>
+            <li>Secured white list access control and management</li>
+            <li>Turnkey conversion of legacy collateral to concise online training modules </li>
+            <li>Comprehensive marketing communication support</li>
+            <li>Collateral library</li>
+            <li>Fast and friendly participant customer service</li>
+            <li>User engagement reporting and surveys</li>
+            <li>Dashboard reporting package</li>
+            <li>Incentive and sales promotion programs</li>
+          </ul>
+        </article>
+      </section>
+    </div>
+    <script>
+      this.techScholarDemo = {
+         goToUrl: function (url) {
+          location.assign(url);
+        }
+      }
+    </script>
+  </body>
+</html>

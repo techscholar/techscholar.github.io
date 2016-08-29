@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="robots" content="noindex">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../styles/demo-ptm.css">
+  </head>
+  <body>
+    <audio src="/audio/techscholar-demo-ptm-p1.mp3" controls autoplay preload></audio>
+    <div class="wrapper">
+      <section class="ptm-sidebar">
+        <div class="logo">
+          <img src="/images/techscholar/techscholar-logo.png" alt="sidebar image">
+        </div>
+        <img src="/images/techscholar/sidebar-05.png" alt="sidebar image">
+      </section>
+      <section class="ptm-body">
+        <div class="mobile-logo">
+          <img src="/images/techscholar/techscholar-logo.png" alt="sidebar image">
+        </div>
+        <nav class="ptm-meta">
+          <select name="ptm-nav-select" onchange="javascript:techScholarDemo.goToUrl(this.value)">
+            <option value="/demo-ptm-p1" selected>Page 1</option>
+            <option value="/demo-ptm-p2">Page 2</option>
+            <option value="/demo-ptm-p3">Page 3</option>
+            <option value="/demo-ptm-p4">Page 4</option>
+            <option value="/demo-ptm-p5">Page 5</option>
+            <option value="/demo-ptm-p6">Page 6</option>
+            <option value="/demo-ptm-p7">Page 7</option>
+            <option value="/demo-ptm-p8">Page 8</option>
+            <option value="/demo-ptm-p9">Page 9</option>
+            <option value="/demo-ptm-p10">Quiz</option>
+          </select>
+          <div class="back-next">
+            <a class="back hidden">< Back</a>
+            <a href="/demo-ptm-p2" class="next">Next ></a>
+          </div>
+        </nav>
+        <article class="ptm-content">
+          <header>
+            <h5 class="ptm-title">DEMO PTM TITLE</h5>
+            <h1 class="slide-title">Welcome to TechScholar</h1>
+            <h2 class="slide-subhead">Product Sales Training for Outside Sales Reps Since 2008</h2>
+          </header>
+          <img src="/images/techscholar/techscholar-client-logos-color.png" alt="">
+          <p>Successful sales reps know HOW to sell. We teach them to how to sell YOUR products.</p>
+          <p>With our “Learn and Earn” model, sales reps complete your training, and we deliver a gift card award directly to their inbox. Over 3,000 reps are Learning and Earning on TechScholar.</p>
+          <p>Our cloud-based platform launched in 2008, with Staples (logo) as a founding client.</p>
+          <p>Since then, we’ve provided over 10,000 hours of Product Sales Training to thousands of sales reps at hundreds of dealers and distributors and delivered more than 4,700 electronic gift card awards for completed Product Sales Training modules. </p>
+          <p><strong>Here’s how it works...</strong></p>
+        </article>
+      </section>
+    </div>
+    <script>
+      this.techScholarDemo = {
+         goToUrl: function (url) {
+          location.assign(url);
+        }
+      }
+    </script>
+  </body>
+</html>

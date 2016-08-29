@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="robots" content="noindex">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../styles/demo-ptm.css">
+  </head>
+  <body>
+    <audio src="/audio/techscholar-demo-ptm-p3.mp3" controls autoplay preload></audio>
+    <div class="wrapper">
+      <section class="ptm-sidebar">
+        <div class="logo">
+          <img src="/images/techscholar/techscholar-logo.png" alt="sidebar image">
+        </div>
+        <img src="/images/techscholar/sidebar-05.png" alt="sidebar image">
+      </section>
+      <section class="ptm-body">
+        <div class="mobile-logo">
+          <img src="/images/techscholar/techscholar-logo.png" alt="sidebar image">
+        </div>
+        <nav class="ptm-meta">
+          <select name="ptm-nav-select" onchange="javascript:techScholarDemo.goToUrl(this.value)">
+            <option value="/demo-ptm-p1">Page 1</option>
+            <option value="/demo-ptm-p2">Page 2</option>
+            <option value="/demo-ptm-p3" selected>Page 3</option>
+            <option value="/demo-ptm-p4">Page 4</option>
+            <option value="/demo-ptm-p5">Page 5</option>
+            <option value="/demo-ptm-p6">Page 6</option>
+            <option value="/demo-ptm-p7">Page 7</option>
+            <option value="/demo-ptm-p8">Page 8</option>
+            <option value="/demo-ptm-p9">Page 9</option>
+            <option value="/demo-ptm-p10">Quiz</option>
+          </select>
+          <div class="back-next">
+            <a href="/demo-ptm-p2" class="back">< Back</a>
+            <a href="/demo-ptm-p4" class="next">Next ></a>
+          </div>
+        </nav>
+        <article class="ptm-content">
+          <header>
+            <h5 class="ptm-title">DEMO PTM TITLE</h5>
+            <h1 class="slide-title">Key Value Propositions</h1>
+            <h2 class="slide-subhead">TechScholar is a turnkey program designed to deliver your Product Sales Training to sales reps quickly, effectively, and less expensively than any other option.</h2>
+          </header>
+          <p>We write, design, and create your Product Training Modules (PTMs).</p>
+          <p>We identify and promote your key value propositions, features/benefits, and differentiators, helping to turn reps into subject-matter experts by incentivizing learning.</p>
+          <p>TechScholar is a web-based learning management system, which means you don’t need help from IT to set it up and get started. We manage all of the technology headaches for you.</p>
+          <p>Every TechScholar Campus has a unique URL and custom-branded login page, so your content goes to your sales network on your branded platform.</p>
+          <img class="max-550" src="/images/techscholar/ts-demo-03-01.png" alt="">
+        </article>
+      </section>
+    </div>
+    <script>
+      this.techScholarDemo = {
+         goToUrl: function (url) {
+          location.assign(url);
+        }
+      }
+    </script>
+  </body>
+</html>
