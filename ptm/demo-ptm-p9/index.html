@@ -7,13 +7,12 @@
     <link rel="stylesheet" href="../styles/demo-ptm.css">
   </head>
   <body>
-    <audio src="/audio/techscholar-demo-ptm-p9.mp3" controls autoplay preload></audio>
     <div class="wrapper">
       <section class="ptm-sidebar">
         <div class="logo">
           <img src="/images/techscholar/techscholar-logo.png" alt="sidebar image">
         </div>
-        <img src="/images/techscholar/sidebar-05.png" alt="sidebar image">
+        <img src="/images/techscholar/ppt_sidebar10.png" alt="sidebar image">
       </section>
       <section class="ptm-body">
         <div class="mobile-logo">
@@ -21,30 +20,58 @@
         </div>
         <nav class="ptm-meta">
           <select name="ptm-nav-select" onchange="javascript:techScholarDemo.goToUrl(this.value)">
-            <option value="/demo-ptm-p1">Page 1</option>
-            <option value="/demo-ptm-p2">Page 2</option>
-            <option value="/demo-ptm-p3">Page 3</option>
-            <option value="/demo-ptm-p4">Page 4</option>
-            <option value="/demo-ptm-p5">Page 5</option>
-            <option value="/demo-ptm-p6">Page 6</option>
-            <option value="/demo-ptm-p7">Page 7</option>
-            <option value="/demo-ptm-p8">Page 8</option>
-            <option value="/demo-ptm-p9" selected>Page 9</option>
-            <option value="/demo-ptm-p10">Quiz</option>
+            <option value="/ptm/demo-ptm-p1">Page 1</option>
+            <option value="/ptm/demo-ptm-p2">Page 2</option>
+            <option value="/ptm/demo-ptm-p3">Page 3</option>
+            <option value="/ptm/demo-ptm-p4">Page 4</option>
+            <option value="/ptm/demo-ptm-p5">Page 5</option>
+            <option value="/ptm/demo-ptm-p6">Page 6</option>
+            <option value="/ptm/demo-ptm-p7">Page 7</option>
+            <option value="/ptm/demo-ptm-p8">Page 8</option>
+            <option value="/ptm/demo-ptm-p9" selected>Page 9</option>
           </select>
           <div class="back-next">
-            <a href="/demo-ptm-p8" class="back">< Back</a>
-            <a href="/demo-ptm-p10" class="next">Next ></a>
+            <a href="/ptm/demo-ptm-p8" class="back">< Back</a>
+            <a class="next hidden">Next ></a>
           </div>
         </nav>
         <article class="ptm-content">
           <header>
-            <h5 class="ptm-title">DEMO PTM TITLE</h5>
-            <h1 class="slide-title">Thank You</h1>
-            <h2 class="slide-subhead">We appreciate your time.</h2>
+            <h5 class="ptm-title">PTM Title</h5>
+            <h1 class="slide-title">Thank you for your time.</h1>
+            <h2 class="slide-subhead">Please select the answer below that best describes the next step you’d like to take to grow your sales.</h1>
           </header>
-          <p>Click “Next” or swipe your mobile device to take the one-question quiz. When finished, watch your e-mail inbox for your $5 Starbucks gift card reward.</p>
-          <p>Then we’d like to review how we can create a program to grow sales from your outside sales rep teams. </p>
+          <form>
+            <fieldset>
+              <div class="quiz-question">
+                <div>
+                  <input type="radio" name="question">
+                </div>
+                <span>I’m interested in hearing more about a TechScholar program. Please contact me.</span>
+              </div>
+              <div class="quiz-question">
+                <div>
+                  <input type="radio" name="question">
+                </div>
+                <span>I’d like to be kept informed about TechScholar developments and programs. Please add me to your mailing list.</span>
+              </div>
+              <div class="quiz-question">
+                <div>
+                  <input type="radio" name="question">
+                </div>
+                <span>I’m not sure we can use TechScholar at this time, but I will forward your information to someone who may be able to do so.</span>
+              </div>
+              <div class="quiz-question">
+                <div>
+                  <input type="radio" name="question">
+                </div>
+                <span>We have no interest in TechScholar at this time, but please send me a $5 Starbucks gift card.</span>
+              </div>
+              <div class="quiz-question submit">
+                <button>Submit</button>
+              </div>
+            </fieldset>
+          </form>
         </article>
       </section>
     </div>

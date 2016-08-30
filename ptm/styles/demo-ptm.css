@@ -143,11 +143,21 @@ article.ptm-content li {
 .slide-title {
   margin-bottom: 0;
   margin-top: 15px;
-  color: #2E62AE;
+  color: #ef4723;
+  font-size: 24px;
 }
 
 .slide-subhead {
-  color: #E74D3B;
+  margin-top: 0;
+  color: #000;
+  font-weight: normal;
+}
+
+.slide-footer {
+  padding-top: 5px;
+  border-top: 2px solid rgb(102,102,102);
+  font-weight: bold;
+  color: rgb(102,102,102);
 }
 
 img {
