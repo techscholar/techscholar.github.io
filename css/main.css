@@ -779,6 +779,10 @@ button {
   letter-spacing: 1px;
 }
 
+.testimonial-card > .quote {
+  font-style: italic;
+}
+
 .testimonials > .wrapper {
   display: -ms-flexbox;
   display: flex;
