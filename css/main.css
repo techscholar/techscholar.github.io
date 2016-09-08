@@ -873,4 +873,51 @@ footer a:hover {
   box-shadow: 0 0 0 3px rgba(255, 155, 2, 0.7);
 }
 
+/* MOBILE / TABLET STYLES */
+
+@media only screen and (max-width: 768px) {
+  .header-link, .header- {
+    display: none;
+  }
+
+  .hero {
+    padding: 0;
+  }
+
+  .columns-3, .wrapper, .wrapper-960 {
+    -ms-flex-align: center;
+    -ms-grid-row-align: center;
+    align-items: center;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-pack: center;
+    justify-content: center;
+  }
+
+  .col-3 {
+    width: 70%;
+  }
+
+  .testimonials .testimonial-card {
+    width: 100%;
+  }
+
+  .testimonials .testimonial-card:first-of-type {
+    margin-bottom: 30px;
+  }
+
+  .form-overlay {
+    width: 100%;
+  }
+
+  .bottom-cta {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .footer-text {
+    margin-top: 10px;
+  }
+}
+
 .icon-techscholar-client-logos,.icon-techscholar-client-logos-color{background-image:url(../assets/images/sprites.png);background-position:0 0;width:900px;height:92px}.icon-techscholar-client-logos-color{background-position:0 -192px;width:600px;height:148px}.icon-techscholar-logo,.icon-techscholar-logo-white,.icon-ts-checkmark{background-image:url(../assets/images/sprites.png);background-position:0 -440px;width:210px;height:27px}.icon-techscholar-logo-white,.icon-ts-checkmark{background-position:-310px -440px}.icon-ts-checkmark{background-position:-700px -192px;width:15px;height:15px}@media (-webkit-min-device-pixel-ratio:2),(min-resolution:192dpi){.icon-techscholar-client-logos,.icon-techscholar-client-logos-color,.icon-techscholar-logo,.icon-techscholar-logo-white,.icon-ts-checkmark{background-image:url(../assets/images/sprites-2x.png);background-size:900px 467px}}
