@@ -11,8 +11,36 @@ $.ajax({
   var dailyData = data,
     tableData = groupDailyData(data);
 
+  setInitialDates(dailyData);
+
+  $("#start-date, #end-date").change(function () {
+    data = _.filter(dailyData, function (dataObj) {
+      var startDate = new Date($("#start-date").val()),
+        endDate = new Date($("#end-date").val()),
+        dataDate = new Date(dataObj["Date (UTC time zone)"]);
+
+      return dataDate >= startDate && dataDate <= endDate;
+    });
+
+    renderTable(groupDailyData(data));
+  });
+
   renderTable(tableData);
 });
+
+function setInitialDates(dailyData) {
+  var initialMin = _.minBy(dailyData, "Date (UTC time zone)")["Date (UTC time zone)"].split("/").reverse(),
+    initialMax = _.maxBy(dailyData, "Date (UTC time zone)")["Date (UTC time zone)"].split("/").reverse();
+
+  _.each([initialMin, initialMax], function (dateArr) {
+    if (dateArr[2].length < 2) {
+      dateArr[2] = "0" + dateArr[2];
+    }
+  });
+
+  $("#start-date").val([initialMin[0], initialMin[2], initialMin[1]].join("-"));
+  $("#end-date").val([initialMax[0], initialMax[2], initialMax[1]].join("-"));
+}
 
 
 function groupDailyData(data) {
