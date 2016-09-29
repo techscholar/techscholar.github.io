@@ -49,7 +49,9 @@ function groupDailyData(data) {
       adTitle: _.head(ad)["Ad Headline"],
       campaign: _.head(ad)["Campaign Name"].replace("TS Demo Drive:", ""),
       clicks: _.sum(_.map(ad, "Clicks")),
-      impressions: _.sum(_.map(ad, "Impressions"))
+      deltaClicks: "+" + _.chain(ad).sortBy("Date (UTC time zone)").last().value()["Clicks"],
+      impressions: _.sum(_.map(ad, "Impressions")),
+      deltaImpressions:"+" + _.chain(ad).sortBy("Date (UTC time zone)").last().value()["Impressions"]
     };
   }).value();
 }
@@ -68,7 +70,9 @@ function renderTable(tableData) {
       "<td class='ad-title'>" + ad.adTitle + "</td>" +
       "<td>" + ad.campaign + "</td>" +
       "<td class='cell-number'>" + ad.clicks + "</td>" +
+      "<td class='cell-number'>" + ad.deltaClicks + "</td>" +
       "<td class='cell-number'>" + ad.impressions + "</td>" +
+      "<td class='cell-number'>" + ad.deltaImpressions + "</td>" +
       "<td class='cell-number'>" + Math.round(100 * ad.clicks / ad.impressions * 100000) / 100000 + "</td>" +
       "</tr>"
     );
