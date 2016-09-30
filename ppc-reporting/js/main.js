@@ -4,6 +4,7 @@ var groupedData,
   mostClickedIds,
   impressionsTrendData,
   adMetadata;
+
 $.ajax({
   type: "GET",
   url: "/ppc-reporting/data/data-linkedin.json"
@@ -15,8 +16,8 @@ $.ajax({
 
   $("#start-date, #end-date").change(function () {
     data = _.filter(dailyData, function (dataObj) {
-      var startDate = new Date($("#start-date").val()),
-        endDate = new Date($("#end-date").val()),
+      var startDate = new Date(parseRawDate($("#start-date").val())),
+        endDate = new Date(parseRawDate($("#end-date").val())),
         dataDate = new Date(dataObj["Date (UTC time zone)"]);
 
       return dataDate >= startDate && dataDate <= endDate;
@@ -51,7 +52,8 @@ function groupDailyData(data) {
       clicks: _.sum(_.map(ad, "Clicks")),
       deltaClicks: "+" + _.chain(ad).sortBy("Date (UTC time zone)").last().value()["Clicks"],
       impressions: _.sum(_.map(ad, "Impressions")),
-      deltaImpressions:"+" + _.chain(ad).sortBy("Date (UTC time zone)").last().value()["Impressions"]
+      deltaImpressions:"+" + _.chain(ad).sortBy("Date (UTC time zone)").last().value()["Impressions"],
+      lastDayReported: _.chain(ad).sortBy("Date (UTC time zone)").last().value()["Date (UTC time zone)"]
     };
   }).value();
 }
@@ -70,11 +72,17 @@ function renderTable(tableData) {
       "<td class='ad-title'>" + ad.adTitle + "</td>" +
       "<td>" + ad.campaign + "</td>" +
       "<td class='cell-number'>" + ad.clicks + "</td>" +
-      "<td class='cell-number'>" + ad.deltaClicks + "</td>" +
       "<td class='cell-number'>" + ad.impressions + "</td>" +
-      "<td class='cell-number'>" + ad.deltaImpressions + "</td>" +
       "<td class='cell-number'>" + Math.round(100 * ad.clicks / ad.impressions * 100000) / 100000 + "</td>" +
+      "<td class='cell-number'>" + ad.deltaClicks + "</td>" +
+      "<td class='cell-number'>" + ad.deltaImpressions + "</td>" +
+      "<td class='cell-number'>" + new Date(ad.lastDayReported).toDateString() + "</td>" +
       "</tr>"
     );
   });
+}
+
+function parseRawDate(inputDateVal) {
+  inputDateVal = inputDateVal.split("-").reverse();
+  return [inputDateVal[1], inputDateVal[0], inputDateVal[2]].join("-");
 }
