@@ -51,8 +51,8 @@ function groupDailyData(data) {
       campaign: _.head(ad)["Campaign Name"].replace("TS Demo Drive:", ""),
       clicks: _.sum(_.map(ad, "Clicks")),
       deltaClicks: "+" + _.chain(ad).sortBy("Date (UTC time zone)").last().value()["Clicks"],
-      impressions: _.sum(_.map(ad, "Impressions")),
-      deltaImpressions:"+" + _.chain(ad).sortBy("Date (UTC time zone)").last().value()["Impressions"],
+      impressions: addCommas(_.sum(_.map(ad, "Impressions"))),
+      deltaImpressions:"+" + addCommas(_.chain(ad).sortBy("Date (UTC time zone)").last().value()["Impressions"]),
       lastDayReported: _.chain(ad).sortBy("Date (UTC time zone)").last().value()["Date (UTC time zone)"]
     };
   }).value();
@@ -73,7 +73,6 @@ function renderTable(tableData) {
       "<td>" + ad.campaign + "</td>" +
       "<td class='cell-number'>" + ad.clicks + "</td>" +
       "<td class='cell-number'>" + ad.impressions + "</td>" +
-      "<td class='cell-number'>" + Math.round(100 * ad.clicks / ad.impressions * 100000) / 100000 + "</td>" +
       "<td class='cell-number'>" + ad.deltaClicks + "</td>" +
       "<td class='cell-number'>" + ad.deltaImpressions + "</td>" +
       "<td class='cell-number'>" + new Date(ad.lastDayReported).toDateString() + "</td>" +
@@ -85,4 +84,9 @@ function renderTable(tableData) {
 function parseRawDate(inputDateVal) {
   inputDateVal = inputDateVal.split("-").reverse();
   return [inputDateVal[1], inputDateVal[0], inputDateVal[2]].join("-");
+}
+
+function addCommas(num) {
+  if ((num).toString().length <= 3) {return (num).toString();}
+  return _.chain((num).toString().split("").reverse().join("")).chunk(3).map(arr => arr.join("")).value().join(",").split("").reverse().join("");
 }
