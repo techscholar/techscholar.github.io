@@ -30,12 +30,15 @@ $.ajax({
 });
 
 function setInitialDates(dailyData) {
-  var initialMin = _.minBy(dailyData, "Date (UTC time zone)")["Date (UTC time zone)"].split("/").reverse(),
-    initialMax = _.maxBy(dailyData, "Date (UTC time zone)")["Date (UTC time zone)"].split("/").reverse();
+  var initialMin = _.minBy(dailyData, dataObj => new Date(dataObj["Date (UTC time zone)"]))["Date (UTC time zone)"].split("/").reverse(),
+    initialMax = _.maxBy(dailyData, dataObj => new Date(dataObj["Date (UTC time zone)"]))["Date (UTC time zone)"].split("/").reverse();
 
   _.each([initialMin, initialMax], function (dateArr) {
     if (dateArr[2].length < 2) {
       dateArr[2] = "0" + dateArr[2];
+    }
+    if (dateArr[1].length < 2) {
+      dateArr[1] = "0" + dateArr[1];
     }
   });
 
@@ -50,10 +53,10 @@ function groupDailyData(data) {
       adTitle: _.head(ad)["Ad Headline"],
       campaign: _.head(ad)["Campaign Name"].replace("TS Demo Drive:", ""),
       clicks: _.sum(_.map(ad, "Clicks")),
-      deltaClicks: "+" + _.chain(ad).sortBy("Date (UTC time zone)").last().value()["Clicks"],
+      deltaClicks: "+" + _.chain(ad).sortBy(dataObj => new Date(dataObj["Date (UTC time zone)"])).last().value()["Clicks"],
       impressions: addCommas(_.sum(_.map(ad, "Impressions"))),
-      deltaImpressions:"+" + addCommas(_.chain(ad).sortBy("Date (UTC time zone)").last().value()["Impressions"]),
-      lastDayReported: _.chain(ad).sortBy("Date (UTC time zone)").last().value()["Date (UTC time zone)"]
+      deltaImpressions:"+" + addCommas(_.chain(ad).sortBy(dataObj => new Date(dataObj["Date (UTC time zone)"])).last().value()["Impressions"]),
+      lastDayReported: _.chain(ad).sortBy(dataObj => new Date(dataObj["Date (UTC time zone)"])).last().value()["Date (UTC time zone)"]
     };
   }).value();
 }
