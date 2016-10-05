@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="robots" content="noindex">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../styles/demo-ptm.css">
+    <link rel="prefetch" href="/demo/demo-ptm-p10">
+    <title>Learn & Earn with TechScholar</title>
+  </head>
+  <body>
+    <audio src="/audio/techscholar-demo-ptm-p9.mp3" controls autoplay preload></audio>
+    <div class="wrapper">
+      <section class="ptm-sidebar">
+        <div class="logo">
+          <img src="/images/techscholar/techscholar-logo.png" alt="sidebar image">
+        </div>
+        <img src="/images/techscholar/ppt_sidebar10.png" alt="sidebar image">
+      </section>
+      <section class="ptm-body">
+        <div class="mobile-logo">
+          <img src="/images/techscholar/techscholar-logo.png" alt="sidebar image">
+        </div>
+        <nav class="ptm-meta">
+          <select name="ptm-nav-select" onchange="javascript:techScholarDemo.goToUrl(this.value)">
+              <option value="/demo">Page 1</option>
+            <option value="/demo/demo-ptm-p2">Page 2</option>
+            <option value="/demo/demo-ptm-p3">Page 3</option>
+            <option value="/demo/demo-ptm-p4">Page 4</option>
+            <option value="/demo/demo-ptm-p5">Page 5</option>
+            <option value="/demo/demo-ptm-p6">Page 6</option>
+            <option value="/demo/demo-ptm-p7">Page 7</option>
+            <option value="/demo/demo-ptm-p8">Page 8</option>
+            <option value="/demo/demo-ptm-p9" selected>Page 9</option>
+          </select>
+          <div class="back-next">
+            <a href="/demo/demo-ptm-p8" class="back">< Back</a>
+            <a class="next hidden">Next ></a>
+          </div>
+        </nav>
+        <article class="ptm-content">
+          <header>
+            <h5 class="ptm-title">Learn & Earn with TechScholar</h5>
+            <h1 class="slide-title">Thank you for your time.</h1>
+            <h2 class="slide-subhead">Please select the answer below that best describes the next step you’d like to take to grow your sales.</h1>
+          </header>
+          <form action="https://formspree.io/mzbylvkm" method="POST">
+            <fieldset>
+              <div class="quiz-question">
+                <div>
+                  <input type="radio" name="question" value="I'm interested in hearing more." required />
+                </div>
+                <span>I’m interested in hearing more about a TechScholar program. Please contact me.</span>
+              </div>
+              <div class="quiz-question">
+                <div>
+                  <input type="radio" name="question" value="Add me to the mailing list." required />
+                </div>
+                <span>I’d like to be kept informed about TechScholar developments and programs. Please add me to your mailing list.</span>
+              </div>
+              <div class="quiz-question">
+                <div>
+                  <input type="radio" name="question" value="I'll fwd your info to a friend." required />
+                </div>
+                <span>I’m not sure we can use TechScholar at this time, but I will forward your information to someone who may be able to do so.</span>
+              </div>
+              <div class="quiz-question">
+                <div>
+                  <input type="radio" name="question" value="Just the gift card, please." required />
+                </div>
+                <span>We have no interest in TechScholar at this time, but please send me a $5 Starbucks gift card.</span>
+              </div>
+            </fieldset>
+            <input type="hidden" name="_next" value="/demo/demo-ptm-p10/">
+            <input type="hidden" name="_subject" value="New submission!">
+            <input type="text" name="_gotcha" style="display:none">
+            <div class="quiz-question submit">
+              <button>Submit</button>
+            </div>
+          </form>
+        </article>
+      </section>
+    </div>
+    <script type="text/javascript" src="/js/bundle.js"></script>
+  </body>
+</html>
