@@ -1,0 +1,81 @@
+<html>
+  <head>
+    <meta name="robots" content="noindex">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>TS PPC Reporting</title>
+    <!-- Load JS Files -->
+    <script src="./js/jquery-3.1.0.min.js"></script>
+    <script src="./js/lodash.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+    <!-- <script src="./js/highcharts.js"></script> -->
+    <!-- Load Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet">
+    <!-- few styles... -->
+    <style>
+      body {
+        font-family: "Source Sans Pro", Helvetica, sans-serif;
+        font-size: 16px;
+        color: #073642;
+      }
+      .container {
+        max-width: 1100px;
+        margin: 0 auto;
+      }
+
+      thead, tr {
+        text-align: left;
+      }
+
+      th, td {
+        padding: 7px 5px;
+        border-bottom: 1px solid #073642;
+      }
+
+      .ad-title {
+        cursor: pointer;
+      }
+
+      .ad-title:hover {
+        border-left: 2px solid #d33682;
+      }
+
+      .cell-number {
+        text-align: right;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <form>
+        <label>
+          Start Date
+          <input type="date" id="start-date">
+        </label>
+        <label>
+          End Date
+          <input type="date" id="end-date">
+        </label>
+      </form>
+      <div class="col-half">
+        <table>
+          <thead>
+            <th>Ad Title</th>
+            <th>Campaign</th>
+            <th>Total Clicks</th>
+            <th>Total Impressions</th>
+            <th>Δ Clicks</th>
+            <th>Δ Impressions</th>
+            <th>Last Day Reported</th>
+          </thead>
+          <tbody id="data-table-body"></tbody>
+        </table>
+      </div>
+      <div class="col-half">
+        <div id="chart-01"></div>
+        <div id="chart-02"></div>
+      </div>
+    </div>
+    <script src="./js/main.js"></script>
+  </body>
+</html>
