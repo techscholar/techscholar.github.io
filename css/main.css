@@ -909,6 +909,10 @@ footer a:hover {
   display: none;
 }
 
+.border-dark-gray {
+  border: 1px solid rgb(48, 48, 48);
+}
+
 .padding-bottom-10px {
   padding-bottom: 10px;
 }
@@ -919,6 +923,10 @@ footer a:hover {
 
 .padding-bottom-20px {
   padding-bottom: 20px;
+}
+
+.padding-bottom-30px {
+  padding-bottom: 30px;
 }
 
 .form-overlay .margin-bottom-0px {
